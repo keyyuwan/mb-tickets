@@ -1,7 +1,14 @@
+import Head from "next/head";
+
 export default function Home() {
   return (
-    <div>
-      <h1>MB Tickets</h1>
-    </div>
+    <>
+      <Head>
+        <title>MBTickets</title>
+      </Head>
+      <>
+        <h1>Home</h1>
+      </>
+    </>
   );
 }
