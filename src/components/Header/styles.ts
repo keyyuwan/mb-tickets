@@ -54,6 +54,7 @@ export const NavBar = styled.nav`
 
   @media (min-width: 1024px) {
     gap: 2rem;
+    transition: color 0.2s;
 
     a {
       display: flex;
@@ -63,7 +64,7 @@ export const NavBar = styled.nav`
     }
 
     a:hover {
-      text-decoration: underline;
+      color: ${({ theme }) => theme.colors.pink};
     }
   }
 `;
