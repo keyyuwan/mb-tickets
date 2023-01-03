@@ -2,10 +2,6 @@ import styled from "styled-components";
 
 export const CategoriesContainer = styled.div`
   margin-top: 2rem;
-
-  @media (min-width: 1024px) {
-    margin-top: 4rem;
-  }
 `;
 
 export const CategoriesList = styled.div`
@@ -16,6 +12,10 @@ export const CategoriesList = styled.div`
   margin-top: 1.5rem;
 
   overflow-x: auto;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Category = styled.div`

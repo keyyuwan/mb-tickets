@@ -20,6 +20,7 @@ export const LocationButton = styled.button<LocationButtonProps>`
   gap: 0.5rem;
   cursor: auto;
 
+  font-weight: 500;
   color: ${({ theme }) => theme.colors.pink};
 
   ${({ isCityEmpty }) =>
