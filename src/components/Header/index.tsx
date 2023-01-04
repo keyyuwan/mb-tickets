@@ -1,4 +1,5 @@
-import { Ticket, House, User } from "phosphor-react";
+import Link from "next/link";
+import { Ticket, House, MagnifyingGlass } from "phosphor-react";
 
 import { ActiveLink } from "./components/ActiveLink";
 import { HeaderContainer, NavBar, ProfileInfo } from "./styles";
@@ -8,10 +9,12 @@ export function Header() {
     <HeaderContainer>
       <div className="content">
         <ProfileInfo>
-          <img
-            src="https://github.com/keyyuwan.png"
-            alt="Imagem de perfil do usuário"
-          />
+          <Link href="/perfil">
+            <img
+              src="https://github.com/keyyuwan.png"
+              alt="Imagem de perfil do usuário"
+            />
+          </Link>
           <span>Olá, Key!</span>
         </ProfileInfo>
         <NavBar>
@@ -22,9 +25,9 @@ export function Header() {
             text="Meus Ingressos"
           />
           <ActiveLink
-            href="/perfil"
-            icon={<User size={32} />}
-            text="Meu Perfil"
+            href="/buscar"
+            icon={<MagnifyingGlass size={32} />}
+            text="Buscar"
           />
         </NavBar>
       </div>

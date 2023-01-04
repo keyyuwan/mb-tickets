@@ -41,18 +41,18 @@ export default function Entity() {
           <EntityEventsContainer>
             <Title title="Eventos Disponíveis" />
             <HorizontalScroll>
-              <Event isEventActive />
-              <Event isEventActive />
-              <Event isEventActive />
+              <Event />
+              <Event />
+              <Event />
             </HorizontalScroll>
           </EntityEventsContainer>
 
           <EntityEventsContainer>
             <Title title="Eventos Encerrados" />
             <HorizontalScroll>
-              <Event />
-              <Event />
-              <Event />
+              <Event isEventActive={false} />
+              <Event isEventActive={false} />
+              <Event isEventActive={false} />
             </HorizontalScroll>
           </EntityEventsContainer>
 

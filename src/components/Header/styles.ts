@@ -25,12 +25,24 @@ export const ProfileInfo = styled.div`
   gap: 1rem;
 
   img {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
   }
 
   @media (min-width: 1024px) {
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      transition: filter 0.2s;
+    }
+
+    img:hover {
+      filter: brightness(0.8);
+    }
+
     span {
       font-size: 1.5rem;
     }

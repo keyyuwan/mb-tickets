@@ -4,7 +4,7 @@ interface EventProps {
   isEventActive?: boolean;
 }
 
-export function Event({ isEventActive }: EventProps) {
+export function Event({ isEventActive = true }: EventProps) {
   return (
     <EventContainer isActive={isEventActive}>
       <img src="https://github.com/keyyuwan.png" alt="Imagem do evento" />
