@@ -43,28 +43,6 @@ export const NavBar = styled.nav`
   gap: 1.5rem;
 
   a {
-    color: ${({ theme }) => theme.colors.gray[100]};
-  }
-
-  @media (max-width: 1023px) {
-    span {
-      display: none;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    gap: 2rem;
-    transition: color 0.2s;
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: ${({ theme }) => theme.colors.pink};
-    }
+    text-decoration: none;
   }
 `;

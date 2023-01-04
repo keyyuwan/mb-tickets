@@ -1,11 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const HorizontalScrollContainer = styled.div`
+interface HorizontalScrollContainerProps {
+  hasOverflowingChildren: boolean;
+}
+
+export const HorizontalScrollContainer = styled.div<HorizontalScrollContainerProps>`
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-left: -3rem;
+
+    ${({ hasOverflowingChildren }) =>
+      hasOverflowingChildren &&
+      css`
+        margin-left: -3rem;
+      `}
   }
 `;
 

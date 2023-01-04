@@ -13,9 +13,6 @@ export function SellingEntities() {
         <SellingEntity />
         <SellingEntity />
         <SellingEntity />
-        <SellingEntity />
-        <SellingEntity />
-        <SellingEntity />
       </HorizontalScroll>
     </SellingEntitiesContainer>
   );

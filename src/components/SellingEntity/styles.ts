@@ -28,5 +28,6 @@ export const SellingEntityContainer = styled.div`
 
   span {
     font-size: 0.75rem;
+    color: ${({ theme }) => theme.colors.gray[200]};
   }
 `;

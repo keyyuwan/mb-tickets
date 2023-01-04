@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Ticket, House, User } from "phosphor-react";
 
+import { ActiveLink } from "./components/ActiveLink";
 import { HeaderContainer, NavBar, ProfileInfo } from "./styles";
 
 export function Header() {
@@ -15,18 +15,17 @@ export function Header() {
           <span>Olá, Key!</span>
         </ProfileInfo>
         <NavBar>
-          <Link href="/">
-            <House size={32} />
-            <span>Eventos</span>
-          </Link>
-          <Link href="/meus-ingressos">
-            <Ticket size={32} />
-            <span>Meus Ingressos</span>
-          </Link>
-          <Link href="/perfil">
-            <User size={32} />
-            <span>Meu Perfil</span>
-          </Link>
+          <ActiveLink href="/" icon={<House size={32} />} text="Eventos" />
+          <ActiveLink
+            href="/meus-ingressos"
+            icon={<Ticket size={32} />}
+            text="Meus Ingressos"
+          />
+          <ActiveLink
+            href="/perfil"
+            icon={<User size={32} />}
+            text="Meu Perfil"
+          />
         </NavBar>
       </div>
     </HeaderContainer>

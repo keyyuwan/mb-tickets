@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { CaretLeft, CaretRight } from "phosphor-react";
 
 import { HorizontalScrollContainer, List, ScrollButton } from "./styles";
@@ -8,6 +8,8 @@ interface HorizontalScrollProps {
 }
 
 export function HorizontalScroll({ children }: HorizontalScrollProps) {
+  const [hasOverflowingChildren, setHasOverflowingChildren] = useState(false);
+
   const horizontalScrollContainerRef = useRef<HTMLDivElement>(null);
 
   function scrollForward() {
@@ -22,17 +24,29 @@ export function HorizontalScroll({ children }: HorizontalScrollProps) {
     }
   }
 
+  useEffect(() => {
+    const listHasOverflowingChildren =
+      horizontalScrollContainerRef.current!.offsetWidth <
+      horizontalScrollContainerRef.current!.scrollWidth;
+
+    setHasOverflowingChildren(listHasOverflowingChildren);
+  }, []);
+
   return (
-    <HorizontalScrollContainer>
-      <ScrollButton onClick={scrollBack}>
-        <CaretLeft weight="bold" />
-      </ScrollButton>
+    <HorizontalScrollContainer hasOverflowingChildren={hasOverflowingChildren}>
+      {hasOverflowingChildren && (
+        <ScrollButton onClick={scrollBack}>
+          <CaretLeft weight="bold" />
+        </ScrollButton>
+      )}
 
       <List ref={horizontalScrollContainerRef}>{children}</List>
 
-      <ScrollButton onClick={scrollForward}>
-        <CaretRight weight="bold" />
-      </ScrollButton>
+      {hasOverflowingChildren && (
+        <ScrollButton onClick={scrollForward}>
+          <CaretRight weight="bold" />
+        </ScrollButton>
+      )}
     </HorizontalScrollContainer>
   );
 }

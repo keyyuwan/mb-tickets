@@ -13,7 +13,7 @@ export const EventContainer = styled.div`
 
   img {
     border-radius: 16px;
-    width: 180px;
+    width: 200px;
     height: 180px;
   }
 
@@ -30,6 +30,7 @@ export const EventContainer = styled.div`
     time,
     span {
       font-size: 0.75rem;
+      color: ${({ theme }) => theme.colors.gray[200]};
     }
 
     time::after {
