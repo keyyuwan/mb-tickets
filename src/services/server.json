@@ -3,50 +3,141 @@
     {
       "id": "choppada-med-pucpr",
       "title": "Choppada MED PUCPR",
-      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg",
+      "img": "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
       "description": "Venha para a maior choppada de Curitiba! Organizada pela turma de Medicina da PUC PR, o evento irá ter atrações incríveis como: MC Hariel, MC Ryan SP e MC Davi.",
       "city": "Curitiba",
+      "state": "Paraná",
       "address": "Rua da Liberdade, 1231 - Curitiba, PR",
       "date": "2023-03-15 13:00:00",
       "isActive": true,
       "categoryId": "1",
-      "organizerEntityId": "puc-pr"
+      "organizerId": "puc-pr"
+    },
+    {
+      "id": "show-matue",
+      "title": "Matuê - Torres Eventos",
+      "img": "https://images.unsplash.com/photo-1581358056424-b09d5511c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=828&q=80",
+      "description": "O maior nome da cena do trap nacional chega em São Paulo para se apresentar no Torres Eventos. O artista com música no TOP #1 do Spotify Brasil (Vampiro) vai fazer um show inédito.",
+      "city": "São Paulo",
+      "state": "São Paulo",
+      "address": "Rua Mateus Leme, 1234 - São Paulo, SP",
+      "date": "2023-01-15 22:00:00",
+      "isActive": true,
+      "categoryId": "2",
+      "organizerId": "torres-eventos"
+    },
+    {
+      "id": "gincana-kids",
+      "title": "Gincana KIDS",
+      "img": "https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "Traga seu filho(a) para a maior gincana infantil do Rio de Janeiro. Esse evento tem o objetivo de ensinar as crianças a trabalharem em grupo, socializar e principalmente se divertir!",
+      "city": "Rio de Janeiro",
+      "state": "Rio de Janeiro",
+      "address": "Rua Mateus Brasileiro, 30 - Rio de Janeiro, RJ",
+      "date": "2023-06-20 14:00:00",
+      "isActive": true,
+      "categoryId": "3",
+      "organizerId": "kids-eventos"
+    },
+    {
+      "id": "a-caverna",
+      "title": "Alegoria da Caverna",
+      "img": "https://images.unsplash.com/photo-1459356067573-0a190eb1fcf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+      "description": "Um espetáculo que rodou o Brasil e está fazendo sucesso chega a Curitiba. A apresentação se trata da história da Alegoria da Caverna, de Platão. Um sucesso em mais de 20 cidades, o espetáculo promete encenar e ensinar as pessoas sobre os ensinamentos da história.",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "address": "Rua Filipe Ret, 3030 - Curitiba, PR",
+      "date": "2023-05-01 20:00:00",
+      "isActive": true,
+      "categoryId": "4",
+      "organizerId": "theater-eventos"
+    },
+    {
+      "id": "campinas-innovation-week",
+      "title": "Campinas Innovation Week",
+      "img": "https://images.unsplash.com/photo-1561489401-fc2876ced162?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "Venha participar do maior evento de tecnologia do estado de São Paulo. Aqui você poderá aprender com grandes nomes do mercado da tecnologia nacional e fazer muito networking. O evento ocorrerá dia 10 de Março na cidade de Campinas. Garanta seu ingresso para não perder nada deste evento.",
+      "city": "Campinas",
+      "state": "São Paulo",
+      "address": "Rua Cleriton Teto, 3030 - Campinas, SP",
+      "date": "2023-04-10 20:00:00",
+      "isActive": true,
+      "categoryId": "5",
+      "organizerId": "learning-eventos"
     }
   ],
-  "organizerEntities": [
+  "organizers": [
     {
       "id": "puc-pr",
       "name": "PUC PR",
+      "img": "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
       "entityType": "universidade",
       "city": "Curitiba",
+      "state": "Paraná",
       "about": "A PUC PR é uma das melhores universidades da região Sul do Brasil. Com uma equipe imensa de organização, a PUC PR te garante eventos com as melhores atrações da cena nacional."
+    },
+    {
+      "id": "torres-eventos",
+      "name": "Torres Eventos",
+      "img": "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+      "entityType": "empresa",
+      "city": "São Paulo",
+      "state": "São Paulo",
+      "about": "Torres Eventos é o maior organizador de shows de artistas nacionais e internacionais. Com mais de 20 sedes em 15 cidades, a Torres Eventos está se tornando uma das maiores empresas de eventos do país."
+    },
+    {
+      "id": "kids-eventos",
+      "name": "KIDS Eventos",
+      "img": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "entityType": "empresa",
+      "city": "Rio de Janeiro",
+      "state": "Rio de Janeiro",
+      "about": "A KIDS Eventos é uma empresa voltada para organização de eventos infantis, tais como gincanas, apresentações de teatro infanto-juvenil e festas infantis. Sendo uma das maiores empresas do Brasil a realizar esses tipos de eventos."
+    },
+    {
+      "id": "theater-eventos",
+      "name": "Theater Eventos",
+      "img": "https://images.unsplash.com/photo-1576724196706-3f23f51ea351?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "entityType": "empresa",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "about": "A Theater Eventos é uma empresa que organiza eventos relacionados a teatro. Selecionamos os melhores grupos de teatro e atores para proporcionar um espetáculo incrível para todos os espectadores presentes."
+    },
+    {
+      "id": "learning-eventos",
+      "name": "Learning Eventos",
+      "img": "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "entityType": "empresa",
+      "city": "Campinas",
+      "state": "São Paulo",
+      "about": "A Learning Eventos organiza os maiores congressos e palestras do Brasil. Trazendo grandes influencias nacionais e mundiais, nós trazemos os melhores e mais sucedidos palestrantes para compartilhar conhecimento e histórias de vida."
     }
   ],
   "categories": [
     {
       "id": "1",
       "title": "Festas",
-      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+      "img": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
     },
     {
       "id": "2",
       "title": "Shows",
-      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+      "img": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
     },
     {
       "id": "3",
       "title": "Infantil",
-      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+      "img": "https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
     },
     {
       "id": "4",
       "title": "Teatros",
-      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+      "img": "https://images.unsplash.com/photo-1610890690846-5149750c8634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
     },
     {
       "id": "5",
       "title": "Congressos",
-      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+      "img": "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
     }
   ]
 }

@@ -1,21 +1,22 @@
+import { IEvent } from "../../dtos/EventDTO";
 import { Event } from "../Event";
 import { Title } from "../Title";
-import { EventsContainer } from "./styles";
 import { HorizontalScroll } from "../HorizontalScroll";
+import { EventsContainer } from "./styles";
 
-export function Events() {
+interface EventsProps {
+  events: IEvent[];
+}
+
+export function Events({ events }: EventsProps) {
   return (
     <EventsContainer>
       <Title title="Eventos" />
 
       <HorizontalScroll>
-        <Event />
-        <Event />
-        <Event />
-        <Event />
-        <Event />
-        <Event />
-        <Event />
+        {events.map((event) => (
+          <Event key={event.id} event={event} />
+        ))}
       </HorizontalScroll>
     </EventsContainer>
   );

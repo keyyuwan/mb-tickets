@@ -1,18 +1,22 @@
+import { IOrganizer } from "../../dtos/OrganizerDTO";
 import { Title } from "../Title";
 import { HorizontalScroll } from "../HorizontalScroll";
 import { SellingEntity } from "../SellingEntity";
 import { SellingEntitiesContainer } from "./styles";
 
-export function SellingEntities() {
+interface SellingEntitiesProps {
+  organizers: IOrganizer[];
+}
+
+export function SellingEntities({ organizers }: SellingEntitiesProps) {
   return (
     <SellingEntitiesContainer>
       <Title title="Entidades Organizadoras" />
 
       <HorizontalScroll>
-        <SellingEntity />
-        <SellingEntity />
-        <SellingEntity />
-        <SellingEntity />
+        {organizers.map((organizer) => (
+          <SellingEntity key={organizer.id} organizer={organizer} />
+        ))}
       </HorizontalScroll>
     </SellingEntitiesContainer>
   );

@@ -1,18 +1,23 @@
+import { IEvent } from "../../dtos/EventDTO";
 import { EventContainer } from "./styles";
 
 interface EventProps {
   isEventActive?: boolean;
+  event: IEvent;
 }
 
-export function Event({ isEventActive = true }: EventProps) {
+export function Event({ isEventActive = true, event }: EventProps) {
   return (
     <EventContainer isActive={isEventActive}>
-      <img src="https://github.com/keyyuwan.png" alt="Imagem do evento" />
-      <strong>Med In Break - PUC PR</strong>
+      <img src={event.img} alt="Imagem do evento" />
+      <strong>{event.title}</strong>
 
       <div className="event-info">
-        <time>09 de Janeiro</time>
-        <span>Curitiba, Paraná</span>
+        <time>
+          {/* 09 de Janeiro */}
+          {event.date}
+        </time>
+        <span>{`${event.city}, ${event.state}`}</span>
       </div>
     </EventContainer>
   );

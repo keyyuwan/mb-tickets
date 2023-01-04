@@ -1,14 +1,16 @@
+import { IOrganizer } from "../../dtos/OrganizerDTO";
 import { SellingEntityContainer } from "./styles";
 
-export function SellingEntity() {
+interface SellingEntityProps {
+  organizer: IOrganizer;
+}
+
+export function SellingEntity({ organizer }: SellingEntityProps) {
   return (
     <SellingEntityContainer>
-      <img
-        src="https://github.com/keyyuwan.png"
-        alt="Imagem da entidade vendedora"
-      />
-      <strong>PUC PR</strong>
-      <span>Curitiba/Paraná</span>
+      <img src={organizer.img} alt="Imagem da entidade vendedora" />
+      <strong>{organizer.name}</strong>
+      <span>{`${organizer.city}/${organizer.state}`}</span>
     </SellingEntityContainer>
   );
 }
