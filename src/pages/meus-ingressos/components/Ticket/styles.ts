@@ -18,6 +18,7 @@ export const TicketsContainer = styled.div<TicketsContainerProps>`
     border-radius: 16px 16px 0 0;
     width: 200px;
     height: 180px;
+    object-fit: cover;
   }
 
   @media (min-width: 1024px) {

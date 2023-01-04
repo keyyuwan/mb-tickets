@@ -15,6 +15,7 @@ export const EventContainer = styled.div`
     border-radius: 16px;
     width: 200px;
     height: 180px;
+    object-fit: cover;
   }
 
   strong {

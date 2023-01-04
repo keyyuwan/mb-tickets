@@ -15,6 +15,7 @@ export const SellingEntityContainer = styled.div`
     border-radius: 16px;
     width: 140px;
     height: 140px;
+    object-fit: cover;
   }
 
   strong {

@@ -36,6 +36,7 @@ export const Category = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   span {

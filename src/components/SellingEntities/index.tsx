@@ -6,7 +6,7 @@ import { SellingEntitiesContainer } from "./styles";
 export function SellingEntities() {
   return (
     <SellingEntitiesContainer>
-      <Title title="Entidades Vendedoras" />
+      <Title title="Entidades Organizadoras" />
 
       <HorizontalScroll>
         <SellingEntity />
