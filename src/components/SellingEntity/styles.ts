@@ -7,10 +7,6 @@ export const SellingEntityContainer = styled.div`
 
   transition: filter 0.2s;
 
-  &:hover {
-    filter: brightness(0.8);
-  }
-
   img {
     border-radius: 16px;
     width: 140px;
@@ -30,5 +26,11 @@ export const SellingEntityContainer = styled.div`
   span {
     font-size: 0.75rem;
     color: ${({ theme }) => theme.colors.gray[200]};
+  }
+
+  @media (min-width: 1024px) {
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `;

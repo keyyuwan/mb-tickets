@@ -66,7 +66,6 @@ export const EventInfo = styled.div`
 
   strong {
     font-family: ${({ theme }) => theme.fonts.heading};
-    font-weight: bold;
     font-size: 2rem;
   }
 

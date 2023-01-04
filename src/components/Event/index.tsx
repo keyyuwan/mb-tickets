@@ -1,8 +1,12 @@
 import { EventContainer } from "./styles";
 
-export function Event() {
+interface EventProps {
+  isEventActive?: boolean;
+}
+
+export function Event({ isEventActive }: EventProps) {
   return (
-    <EventContainer>
+    <EventContainer isActive={isEventActive}>
       <img src="https://github.com/keyyuwan.png" alt="Imagem do evento" />
       <strong>Med In Break - PUC PR</strong>
 

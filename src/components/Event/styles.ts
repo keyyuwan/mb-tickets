@@ -1,15 +1,22 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const EventContainer = styled.div`
+interface EventContainerProps {
+  isActive?: boolean;
+}
+
+export const EventContainer = styled.div<EventContainerProps>`
   cursor: pointer;
   display: flex;
   flex-direction: column;
 
   transition: filter 0.2s;
 
-  &:hover {
-    filter: brightness(0.8);
-  }
+  ${({ isActive }) =>
+    !isActive &&
+    css`
+      filter: brightness(0.5);
+      cursor: not-allowed;
+    `}
 
   img {
     border-radius: 16px;
@@ -41,6 +48,10 @@ export const EventContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
+    &:hover {
+      filter: brightness(0.8);
+    }
+
     img {
       width: 240px;
       height: 180px;
