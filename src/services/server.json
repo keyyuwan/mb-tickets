@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "id": "choppada-med-pucpr",
+      "title": "Choppada MED PUCPR",
+      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg",
+      "description": "Venha para a maior choppada de Curitiba! Organizada pela turma de Medicina da PUC PR, o evento irá ter atrações incríveis como: MC Hariel, MC Ryan SP e MC Davi.",
+      "city": "Curitiba",
+      "address": "Rua da Liberdade, 1231 - Curitiba, PR",
+      "date": "2023-03-15 13:00:00",
+      "isActive": true,
+      "categoryId": "1",
+      "organizerEntityId": "puc-pr"
+    }
+  ],
+  "organizerEntities": [
+    {
+      "id": "puc-pr",
+      "name": "PUC PR",
+      "entityType": "universidade",
+      "city": "Curitiba",
+      "about": "A PUC PR é uma das melhores universidades da região Sul do Brasil. Com uma equipe imensa de organização, a PUC PR te garante eventos com as melhores atrações da cena nacional."
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "title": "Festas",
+      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Shows",
+      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Infantil",
+      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Teatros",
+      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Congressos",
+      "img": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-podcastr/opensource.jpg"
+    }
+  ]
+}
