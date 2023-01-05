@@ -89,11 +89,16 @@ export const EntityInfo = styled.div`
       content: "•";
       margin: 0 0.25rem;
     }
+
+    span.entity-type {
+      text-transform: capitalize;
+    }
   }
 `;
 
 export const AboutTheEntity = styled.div`
   margin-top: 2rem;
+  max-width: 800px;
 
   p {
     margin-top: 0.5rem;
@@ -103,4 +108,33 @@ export const AboutTheEntity = styled.div`
 
 export const EntityEventsContainer = styled.div`
   margin-top: 2rem;
+`;
+
+export const NoAvailableEventsContainer = styled.div`
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg,
+  span {
+    color: ${({ theme }) => theme.colors.gray[200]};
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (min-width: 768px) {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      font-size: 1.125rem;
+    }
+  }
 `;

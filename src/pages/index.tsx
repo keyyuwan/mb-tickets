@@ -4,6 +4,7 @@ import Head from "next/head";
 import { api } from "../services/api";
 import { IEvent } from "../dtos/EventDTO";
 import { IOrganizer } from "../dtos/OrganizerDTO";
+import { formatDate } from "../utils/formatDate";
 import { Categories } from "../components/Categories";
 import { Events } from "../components/Events";
 import { Filter } from "../components/Filter";
@@ -33,7 +34,7 @@ export default function Home({ events, organizers }: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const [eventsData, organizersData] = await Promise.all([
-    api.get("events?_expand=organizer", {
+    api.get<IEvent[]>("events?isActive=true", {
       params: {
         _sort: "date",
       },
@@ -42,21 +43,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   ]);
 
   const formattedEvents = eventsData.data.map((event: IEvent) => ({
-    id: event.id,
-    title: event.title,
-    img: event.img,
-    description: event.description,
-    city: event.city,
-    state: event.state,
-    address: event.address,
-    date: event.date, // formatar com date-fns
-    isActive: event.isActive,
-    organizerEntity: {
-      name: event.organizer.name,
-      img: event.organizer.img,
-      city: event.organizer.city,
-      state: event.organizer.state,
-    },
+    ...event,
+    date: formatDate(event.date, "dd 'de' MMMM"),
   }));
 
   const formattedOrganizers = organizersData.data.map(

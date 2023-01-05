@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { IEvent } from "../../dtos/EventDTO";
 import { Event } from "../Event";
 import { Title } from "../Title";
@@ -15,7 +17,9 @@ export function Events({ events }: EventsProps) {
 
       <HorizontalScroll>
         {events.map((event) => (
-          <Event key={event.id} event={event} />
+          <Link key={event.id} href={`/evento/${event.id}`}>
+            <Event event={event} />
+          </Link>
         ))}
       </HorizontalScroll>
     </EventsContainer>

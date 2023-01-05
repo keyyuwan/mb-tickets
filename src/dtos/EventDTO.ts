@@ -9,6 +9,7 @@ export interface IEvent {
   date: string;
   isActive: boolean;
   organizer: {
+    id: string;
     name: string;
     img: string;
     city: string;

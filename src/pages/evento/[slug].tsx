@@ -1,6 +1,12 @@
+import { GetStaticPaths, GetStaticProps } from "next";
+import Link from "next/link";
 import Head from "next/head";
+import { ParsedUrlQuery } from "querystring";
 import { CalendarBlank, MapPin, Minus, Plus } from "phosphor-react";
 
+import { api } from "../../services/api";
+import { IEvent } from "../../dtos/EventDTO";
+import { formatDate } from "../../utils/formatDate";
 import { Title } from "../../components/Title";
 import { SellingEntity } from "../../components/SellingEntity";
 import {
@@ -17,76 +23,102 @@ import {
   EventImageContainer,
 } from "./styles";
 
-export default function Event() {
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
+
+interface EventProps {
+  event: IEvent;
+}
+
+export default function Event({ event }: EventProps) {
   return (
-    <>
+    <EventContainer>
       <Head>
-        <title>MBTickets | Evento tal</title>
+        <title>MBTickets | {event.title}</title>
       </Head>
-      <EventContainer>
-        <EventImageContainer img="https://github.com/keyyuwan.png">
-          <EventImage
-            src="https://github.com/keyyuwan.png"
-            alt="Imagem do evento"
-          />
-        </EventImageContainer>
 
-        <EventContent>
-          <EventInfo>
-            <strong>Med In Break</strong>
-            <div className="wrapper">
-              <CalendarBlank />
-              <time>09 de Janeiro de 2023 às 13:00</time>
-            </div>
-            <div className="wrapper">
-              <MapPin />
-              <span>Rua da Liberdade, 1231 - Curitiba, Paraná</span>
-            </div>
-          </EventInfo>
+      <EventImageContainer img={event.img}>
+        <EventImage src={event.img} alt="Imagem do evento" />
+      </EventImageContainer>
 
-          <Wrapper>
-            <TicketsContainer>
-              <Ticket>
-                <div className="ticket-info">
-                  <strong>1o. Lote: Med In Break</strong>
-                  <span>R$100,00</span>
-                </div>
+      <EventContent>
+        <EventInfo>
+          <strong>{event.title}</strong>
+          <div className="wrapper">
+            <CalendarBlank />
+            <time>{event.date}</time>
+          </div>
+          <div className="wrapper">
+            <MapPin />
+            <span>{event.address}</span>
+          </div>
+        </EventInfo>
 
-                <div className="ticket-count">
-                  <TicketCountButton action="remove">
-                    <Minus size={16} />
-                  </TicketCountButton>
-                  <span>0</span>
-                  <TicketCountButton action="add">
-                    <Plus size={16} />
-                  </TicketCountButton>
-                </div>
-              </Ticket>
-            </TicketsContainer>
+        <Wrapper>
+          <TicketsContainer>
+            <Ticket>
+              <div className="ticket-info">
+                <strong>1o. Lote: Med In Break</strong>
+                <span>R$100,00</span>
+              </div>
 
-            <EventDescriptionContainer>
-              <Title title="Descrição do evento" />
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </p>
-            </EventDescriptionContainer>
-          </Wrapper>
+              <div className="ticket-count">
+                <TicketCountButton action="remove">
+                  <Minus size={16} />
+                </TicketCountButton>
+                <span>0</span>
+                <TicketCountButton action="add">
+                  <Plus size={16} />
+                </TicketCountButton>
+              </div>
+            </Ticket>
+          </TicketsContainer>
 
-          <EventOrganizerContainer>
-            <Title title="Entidade Organizadora" />
-            <SellingEntity />
-          </EventOrganizerContainer>
-        </EventContent>
-      </EventContainer>
-    </>
+          <EventDescriptionContainer>
+            <Title title="Descrição do evento" />
+            <p>{event.description}</p>
+          </EventDescriptionContainer>
+        </Wrapper>
+
+        <EventOrganizerContainer>
+          <Title title="Entidade Organizadora" />
+          <Link href={`/entidade/${event.organizer.id}`}>
+            <SellingEntity organizer={event.organizer} />
+          </Link>
+        </EventOrganizerContainer>
+      </EventContent>
+    </EventContainer>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { slug } = ctx.params as IParams;
+
+  const { data } = await api.get<IEvent>(`events/${slug}?_expand=organizer`);
+
+  const formattedEvent = {
+    ...data,
+    date: formatDate(data.date, "dd 'de' MMMM 'de' y 'ás' HH':'mm"),
+    organizer: {
+      id: data.organizer.id,
+      name: data.organizer.name,
+      img: data.organizer.img,
+      city: data.organizer.city,
+      state: data.organizer.state,
+    },
+  };
+
+  return {
+    props: {
+      event: formattedEvent,
+    },
+  };
+};

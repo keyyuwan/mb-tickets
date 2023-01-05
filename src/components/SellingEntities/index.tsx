@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { IOrganizer } from "../../dtos/OrganizerDTO";
 import { Title } from "../Title";
 import { HorizontalScroll } from "../HorizontalScroll";
@@ -15,7 +17,9 @@ export function SellingEntities({ organizers }: SellingEntitiesProps) {
 
       <HorizontalScroll>
         {organizers.map((organizer) => (
-          <SellingEntity key={organizer.id} organizer={organizer} />
+          <Link key={organizer.id} href={`/entidade/${organizer.id}`}>
+            <SellingEntity organizer={organizer} />
+          </Link>
         ))}
       </HorizontalScroll>
     </SellingEntitiesContainer>

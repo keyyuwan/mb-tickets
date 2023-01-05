@@ -1,3 +1,5 @@
+import { IEvent } from "./EventDTO";
+
 export interface IOrganizer {
   id: string;
   name: string;
@@ -6,4 +8,5 @@ export interface IOrganizer {
   city: string;
   state: string;
   about: string;
+  events?: IEvent[];
 }

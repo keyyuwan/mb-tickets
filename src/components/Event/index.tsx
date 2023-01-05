@@ -13,10 +13,7 @@ export function Event({ isEventActive = true, event }: EventProps) {
       <strong>{event.title}</strong>
 
       <div className="event-info">
-        <time>
-          {/* 09 de Janeiro */}
-          {event.date}
-        </time>
+        <time>{event.date}</time>
         <span>{`${event.city}, ${event.state}`}</span>
       </div>
     </EventContainer>

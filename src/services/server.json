@@ -14,6 +14,19 @@
       "organizerId": "puc-pr"
     },
     {
+      "id": "choppada-direito-pucpr",
+      "title": "Choppada Direito PUCPR",
+      "img": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "Venha para a maior choppada de Curitiba! Organizada pela turma de Medicina da PUC PR, o evento irá ter atrações incríveis como: MC Hariel, MC Ryan SP e MC Davi.",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "address": "Rua da Liberdade, 1231 - Curitiba, PR",
+      "date": "2022-11-15 13:00:00",
+      "isActive": false,
+      "categoryId": "1",
+      "organizerId": "puc-pr"
+    },
+    {
       "id": "show-matue",
       "title": "Matuê - Torres Eventos",
       "img": "https://images.unsplash.com/photo-1581358056424-b09d5511c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=828&q=80",
@@ -64,6 +77,19 @@
       "isActive": true,
       "categoryId": "5",
       "organizerId": "learning-eventos"
+    },
+    {
+      "id": "choppada-up",
+      "title": "Choppada UP",
+      "img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "A Choppada da Universidade Positivo será uma das maiores da cidade, contando com atrações incríveis do Rap, Funk e Trap nacional.",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "address": "Rua Oswaldo Cruz, 4321 - Curitiba, PR",
+      "date": "2022-10-10 22:00:00",
+      "isActive": false,
+      "categoryId": "1",
+      "organizerId": "up"
     }
   ],
   "organizers": [
@@ -111,6 +137,15 @@
       "city": "Campinas",
       "state": "São Paulo",
       "about": "A Learning Eventos organiza os maiores congressos e palestras do Brasil. Trazendo grandes influencias nacionais e mundiais, nós trazemos os melhores e mais sucedidos palestrantes para compartilhar conhecimento e histórias de vida."
+    },
+    {
+      "id": "up",
+      "name": "Universidade Positivo",
+      "img": "https://images.unsplash.com/20/cambridge.JPG?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=847&q=80",
+      "entityType": "universidade",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "about": "A Universidade Positivo está organizando choppadas/cervejadas e trazendo atrações de outro nível para as festas."
     }
   ],
   "categories": [

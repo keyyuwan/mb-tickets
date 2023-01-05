@@ -1,8 +1,12 @@
-import { IOrganizer } from "../../dtos/OrganizerDTO";
 import { SellingEntityContainer } from "./styles";
 
 interface SellingEntityProps {
-  organizer: IOrganizer;
+  organizer: {
+    img: string;
+    name: string;
+    city: string;
+    state: string;
+  };
 }
 
 export function SellingEntity({ organizer }: SellingEntityProps) {

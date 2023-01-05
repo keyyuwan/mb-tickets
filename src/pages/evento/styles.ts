@@ -182,6 +182,8 @@ export const TicketCountButton = styled.button<TicketCountButtonProps>`
 `;
 
 export const EventDescriptionContainer = styled.div`
+  max-width: 800px;
+
   p {
     margin-top: 0.5rem;
     color: ${({ theme }) => theme.colors.gray[200]};

@@ -28,6 +28,10 @@ export const GlobalStyle = createGlobalStyle`
         background: 0;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     .react-modal-overlay {
         background: rgba(0, 0, 0, 0.5);
         position: fixed;
