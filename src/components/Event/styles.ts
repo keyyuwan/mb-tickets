@@ -9,6 +9,8 @@ export const EventContainer = styled.div<EventContainerProps>`
   display: flex;
   flex-direction: column;
 
+  max-width: 200px;
+
   transition: filter 0.2s;
 
   ${({ isActive }) =>
@@ -30,10 +32,17 @@ export const EventContainer = styled.div<EventContainerProps>`
     margin-top: 0.5rem;
     color: ${({ theme }) => theme.colors.white};
     font-family: ${({ theme }) => theme.fonts.heading};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .event-info {
     margin-top: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: ${({ theme }) => theme.colors.gray[200]};
 
     time,
     span {
@@ -48,6 +57,8 @@ export const EventContainer = styled.div<EventContainerProps>`
   }
 
   @media (min-width: 1024px) {
+    max-width: 240px;
+
     &:hover {
       filter: brightness(0.8);
     }
