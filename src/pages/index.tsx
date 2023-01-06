@@ -46,7 +46,16 @@ export default function Home({ events, organizers }: HomeProps) {
     });
   }
 
+  function getFilteredEntities() {
+    return organizers.filter((organizer) => {
+      if (userCity) {
+        return organizer.city === userCity;
+      } else return organizers;
+    });
+  }
+
   const eventsData = getFilteredEvents();
+  const entitiesData = getFilteredEntities();
 
   return (
     <>
@@ -60,7 +69,7 @@ export default function Home({ events, organizers }: HomeProps) {
           handleFilterByCategory={handleFilterByCategory}
         />
         <Events events={eventsData} />
-        <SellingEntities organizers={organizers} />
+        <SellingEntities organizers={entitiesData} />
       </Container>
     </>
   );
