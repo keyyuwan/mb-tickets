@@ -8,6 +8,10 @@ interface TicketCountButtonProps {
   action: "add" | "remove";
 }
 
+interface TicketDisponibilityProps {
+  isAvailable: boolean;
+}
+
 export const EventContainer = styled.div`
   @media (min-width: 768px) {
     padding: 0 2rem 2rem;
@@ -116,6 +120,7 @@ export const TicketsContainer = styled.div`
 `;
 
 export const Ticket = styled.div`
+  max-width: 800px;
   background-color: ${({ theme }) => theme.colors.gray[700]};
   border-radius: 16px;
   padding: 1rem;
@@ -197,4 +202,9 @@ export const EventOrganizerContainer = styled.div`
   gap: 1rem;
 
   width: fit-content;
+`;
+
+export const TicketDisponibility = styled.span<TicketDisponibilityProps>`
+  color: ${({ theme, isAvailable }) =>
+    isAvailable ? theme.colors.green : theme.colors.red};
 `;

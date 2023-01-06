@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "id": "choppada-med-pucpr",
+      "id": "choppada-calouros-med-pucpr",
       "title": "Choppada Calouros MED - PUCPR",
       "img": "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
       "description": "Venha para a maior choppada de Curitiba! Organizada pela turma de Medicina da PUC PR, o evento irá ter atrações incríveis como: MC Hariel, MC Ryan SP e MC Davi.",
@@ -9,6 +9,32 @@
       "state": "Paraná",
       "address": "Rua da Liberdade, 1231 - Curitiba, PR",
       "date": "2023-03-15 13:00:00",
+      "isActive": true,
+      "categoryId": "1",
+      "organizerId": "puc-pr"
+    },
+    {
+      "id": "catolitros-engenharia-pucpr",
+      "title": "Católitros - Engenharia PUCPR",
+      "img": "https://images.unsplash.com/photo-1605032936754-f03abc9df599?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "Venha para a maior choppada de Curitiba! Organizada pela turma de Engenharia da PUC PR, o evento irá ter atrações incríveis da cena do funk e trapfunk.",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "address": "Rua da Liberdade, 1231 - Curitiba, PR",
+      "date": "2023-02-08 21:00:00",
+      "isActive": true,
+      "categoryId": "1",
+      "organizerId": "puc-pr"
+    },
+    {
+      "id": "baile-do-papa-pucpr",
+      "title": "Baile do Papa - PUCPR",
+      "img": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "Venha para a maior choppada de Curitiba! O Baile do Papa irá ter atrações incríveis da cena da música eletrônica brasileira.",
+      "city": "Curitiba",
+      "state": "Paraná",
+      "address": "Rua da Liberdade, 1231 - Curitiba, PR",
+      "date": "2023-03-21 22:00:00",
       "isActive": true,
       "categoryId": "1",
       "organizerId": "puc-pr"
@@ -90,6 +116,19 @@
       "isActive": false,
       "categoryId": "1",
       "organizerId": "up"
+    },
+    {
+      "id": "choppada-ufsc",
+      "title": "Choppada UFSC",
+      "img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "description": "A Choppada da Universidade Federal de Santa Catarina será uma das maiores da cidade, contando com atrações incríveis do Rap, Funk e Trap nacional.",
+      "city": "Florianópolis",
+      "state": "Santa Catarina",
+      "address": "Rua Brigadeiro Franco, 12 - Florianópolis, SC",
+      "date": "2022-09-10 22:00:00",
+      "isActive": false,
+      "categoryId": "1",
+      "organizerId": "ufsc"
     }
   ],
   "organizers": [
@@ -146,6 +185,15 @@
       "city": "Curitiba",
       "state": "Paraná",
       "about": "A Universidade Positivo está organizando choppadas/cervejadas e trazendo atrações de outro nível para as festas."
+    },
+    {
+      "id": "ufsc",
+      "name": "Universidade Federal de Santa Catarina",
+      "img": "https://images.unsplash.com/photo-1603573355706-3f15d98cf100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1029&q=80",
+      "entityType": "universidade",
+      "city": "Florianópolis",
+      "state": "Santa Catarina",
+      "about": "A UFSC é a maior universidade do estado de Santa Catarina. Com uma imensa equipe de organização, trará eventos incríveis como choppadas/cervejadas que contarão com atrações incríveis."
     }
   ],
   "categories": [
@@ -173,6 +221,92 @@
       "id": "5",
       "title": "Congressos",
       "img": "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "1",
+      "eventId": "choppada-calouros-med-pucpr",
+      "isActive": false,
+      "lot": 1,
+      "price": 5000
+    },
+    {
+      "id": "2",
+      "eventId": "choppada-calouros-med-pucpr",
+      "isActive": true,
+      "lot": 2,
+      "price": 8000
+    },
+    {
+      "id": "3",
+      "eventId": "show-matue",
+      "isActive": true,
+      "lot": 1,
+      "price": 7500
+    },
+    {
+      "id": "4",
+      "eventId": "catolitros-engenharia-pucpr",
+      "isActive": true,
+      "lot": 1,
+      "price": 4000
+    },
+    {
+      "id": "5",
+      "eventId": "baile-do-papa-pucpr",
+      "isActive": true,
+      "lot": 1,
+      "price": 4500
+    },
+    {
+      "id": "5",
+      "eventId": "choppada-direito-pucpr",
+      "isActive": true,
+      "lot": 1,
+      "price": 5500
+    },
+    {
+      "id": "6",
+      "eventId": "gincana-kids",
+      "isActive": true,
+      "lot": 1,
+      "price": 3000
+    },
+    {
+      "id": "7",
+      "eventId": "a-caverna",
+      "isActive": true,
+      "lot": 1,
+      "price": 4000
+    },
+    {
+      "id": "8",
+      "eventId": "campinas-innovation-week",
+      "isActive": false,
+      "lot": 1,
+      "price": 10000
+    },
+    {
+      "id": "9",
+      "eventId": "campinas-innovation-week",
+      "isActive": true,
+      "lot": 2,
+      "price": 15000
+    },
+    {
+      "id": "10",
+      "eventId": "choppada-up",
+      "isActive": true,
+      "lot": 1,
+      "price": 4000
+    },
+    {
+      "id": "11",
+      "eventId": "choppada-ufsc",
+      "isActive": true,
+      "lot": 1,
+      "price": 4500
     }
   ]
 }

@@ -9,6 +9,7 @@ export const theme = {
     black: "000000",
     pink: "#db1e99",
     green: "#5cc158",
+    red: "#ff3333",
 
     gray: {
       100: "#f0f2f5",
