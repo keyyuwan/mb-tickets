@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { IUserTickets } from "../../../../dtos/UserTicketsDTO";
 import { TicketDetailsModal } from "../TicketDetailsModal";
 import {
   TicketContent,
@@ -9,10 +10,10 @@ import {
 } from "./styles";
 
 interface TicketProps {
-  isTicketActive?: boolean;
+  ticket: IUserTickets;
 }
 
-export function Ticket({ isTicketActive }: TicketProps) {
+export function Ticket({ ticket }: TicketProps) {
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
 
   function handleToggleDetailsModal() {
@@ -20,23 +21,23 @@ export function Ticket({ isTicketActive }: TicketProps) {
   }
 
   return (
-    <TicketsContainer isActive={isTicketActive}>
-      <img
-        src="https://github.com/keyyuwan.png"
-        alt="Imagem do evento do ingresso"
-      />
+    <TicketsContainer isActive={ticket.event.isActive}>
+      <img src={ticket.event.img} alt="Imagem do evento do ingresso" />
 
       <TicketContent>
-        <span className="event-name">Med in Break</span>
+        <span className="event-name">{ticket.event.title}</span>
 
         <TicketInfo>
-          <span>ID do ingresso</span>
-          <p>135342233</p>
+          <span>Número do ingresso</span>
+          <p>{ticket.number}</p>
         </TicketInfo>
 
         <TicketInfo>
           <span>Data do evento</span>
-          <p>12/08/2023 ás 13:00</p>
+          <p>
+            {/* 12/08/2023 ás 13:00 */}
+            {ticket.event.date}
+          </p>
         </TicketInfo>
 
         <DetailsButton onClick={handleToggleDetailsModal}>
@@ -46,6 +47,7 @@ export function Ticket({ isTicketActive }: TicketProps) {
         <TicketDetailsModal
           isOpen={isDetailsModalOpen}
           onToggle={handleToggleDetailsModal}
+          ticket={ticket}
         />
       </TicketContent>
     </TicketsContainer>

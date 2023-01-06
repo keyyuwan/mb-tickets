@@ -70,7 +70,7 @@ export default function Event({ event }: EventProps) {
     }
 
     getEventTickets();
-  }, []);
+  }, [event.id]);
 
   return (
     <EventContainer>

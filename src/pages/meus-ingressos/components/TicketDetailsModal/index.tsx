@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { useTheme } from "styled-components";
 import { useSpring, animated } from "react-spring";
 
+import { IUserTickets } from "../../../../dtos/UserTicketsDTO";
 import { Title } from "../../../../components/Title";
 import { TicketDetailsContainer, TicketInfo } from "./styles";
 
@@ -11,11 +12,13 @@ import qrCodeImg from "../../../../assets/qrcode.png";
 interface TicketDetailsModalProps {
   isOpen: boolean;
   onToggle: () => void;
+  ticket: IUserTickets;
 }
 
 export function TicketDetailsModal({
   isOpen,
   onToggle,
+  ticket,
 }: TicketDetailsModalProps) {
   const theme = useTheme();
 
@@ -43,36 +46,39 @@ export function TicketDetailsModal({
           <Title title="Detalhes do Ingresso" />
 
           <TicketInfo>
-            <span>Id</span>
-            <p>1332454</p>
+            <span>Número do ingresso</span>
+            <p>{ticket.number}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Nome</span>
-            <p>Key Yu Wan</p>
+            <p>{`${ticket.user.name} ${ticket.user.surname}`}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Cpf</span>
-            <p>098.073.112-98</p>
+            <p>{ticket.user.cpf}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Evento</span>
-            <p>Med In Break</p>
+            <p>{ticket.event.title}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Entidade</span>
-            <p>PUC PR</p>
+            <p>{ticket.organizer.name}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Lote</span>
-            <p>4o. Lote</p>
+            <p>{ticket.ticket.lot}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Data</span>
-            <p>12/08/2023 ás 13:00</p>
+            <p>
+              {/* 12/08/2023 ás 13:00 */}
+              {ticket.event.date}
+            </p>
           </TicketInfo>
           <TicketInfo>
             <span>Endereço</span>
-            <p>Rua Oswaldo Silva, 231 - Curitiba, Paraná</p>
+            <p>{ticket.event.address}</p>
           </TicketInfo>
           <TicketInfo>
             <span>QR Code</span>

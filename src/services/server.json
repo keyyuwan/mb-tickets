@@ -227,6 +227,7 @@
     {
       "id": "1",
       "eventId": "choppada-calouros-med-pucpr",
+      "organizerId": "puc-pr",
       "isActive": false,
       "lot": 1,
       "price": 5000
@@ -234,6 +235,7 @@
     {
       "id": "2",
       "eventId": "choppada-calouros-med-pucpr",
+      "organizerId": "puc-pr",
       "isActive": true,
       "lot": 2,
       "price": 8000
@@ -241,6 +243,7 @@
     {
       "id": "3",
       "eventId": "show-matue",
+      "organizerId": "torres-eventos",
       "isActive": true,
       "lot": 1,
       "price": 7500
@@ -248,6 +251,7 @@
     {
       "id": "4",
       "eventId": "catolitros-engenharia-pucpr",
+      "organizerId": "puc-pr",
       "isActive": true,
       "lot": 1,
       "price": 4000
@@ -255,6 +259,7 @@
     {
       "id": "5",
       "eventId": "baile-do-papa-pucpr",
+      "organizerId": "puc-pr",
       "isActive": true,
       "lot": 1,
       "price": 4500
@@ -262,13 +267,15 @@
     {
       "id": "5",
       "eventId": "choppada-direito-pucpr",
-      "isActive": true,
+      "organizerId": "puc-pr",
+      "isActive": false,
       "lot": 1,
       "price": 5500
     },
     {
       "id": "6",
       "eventId": "gincana-kids",
+      "organizerId": "kids-eventos",
       "isActive": true,
       "lot": 1,
       "price": 3000
@@ -276,6 +283,7 @@
     {
       "id": "7",
       "eventId": "a-caverna",
+      "organizerId": "theater-eventos",
       "isActive": true,
       "lot": 1,
       "price": 4000
@@ -283,6 +291,7 @@
     {
       "id": "8",
       "eventId": "campinas-innovation-week",
+      "organizerId": "learning-eventos",
       "isActive": false,
       "lot": 1,
       "price": 10000
@@ -290,6 +299,7 @@
     {
       "id": "9",
       "eventId": "campinas-innovation-week",
+      "organizerId": "learning-eventos",
       "isActive": true,
       "lot": 2,
       "price": 15000
@@ -297,6 +307,7 @@
     {
       "id": "10",
       "eventId": "choppada-up",
+      "organizerId": "up",
       "isActive": true,
       "lot": 1,
       "price": 4000
@@ -304,9 +315,47 @@
     {
       "id": "11",
       "eventId": "choppada-ufsc",
+      "organizerId": "ufsc",
       "isActive": true,
       "lot": 1,
       "price": 4500
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Key",
+      "surname": "Yu Wan",
+      "username": "keyyuwan",
+      "img": "https://github.com/keyyuwan.png",
+      "cpf": "094.070.159-63",
+      "password": "1234"
+    }
+  ],
+  "users_tickets": [
+    {
+      "id": "1",
+      "number": 136162,
+      "ticketId": "1",
+      "userId": "1",
+      "eventId": "choppada-calouros-med-pucpr",
+      "organizerId": "puc-pr"
+    },
+    {
+      "id": "1",
+      "number": 2837181,
+      "ticketId": "1",
+      "userId": "1",
+      "eventId": "choppada-direito-pucpr",
+      "organizerId": "puc-pr"
+    },
+    {
+      "id": "1",
+      "number": 136341,
+      "ticketId": "1",
+      "userId": "2",
+      "eventId": "choppada-calouros-med-pucpr",
+      "organizerId": "puc-pr"
     }
   ]
 }

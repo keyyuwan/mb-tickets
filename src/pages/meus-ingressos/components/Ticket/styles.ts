@@ -8,6 +8,8 @@ export const TicketsContainer = styled.div<TicketsContainerProps>`
   display: flex;
   flex-direction: column;
 
+  max-width: 200px;
+
   ${({ isActive }) =>
     !isActive &&
     css`
@@ -22,6 +24,8 @@ export const TicketsContainer = styled.div<TicketsContainerProps>`
   }
 
   @media (min-width: 1024px) {
+    max-width: 240px;
+
     img {
       width: 240px;
       height: 180px;
@@ -33,6 +37,10 @@ export const TicketContent = styled.div`
   border-radius: 0 0 16px 16px;
   background-color: ${({ theme }) => theme.colors.gray[700]};
   padding: 0.75rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   span.event-name {
     text-transform: uppercase;
