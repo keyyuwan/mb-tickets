@@ -8,6 +8,7 @@ export interface IEvent {
   address: string;
   date: string;
   isActive: boolean;
+  categoryId: string;
   organizer: {
     id: string;
     name: string;

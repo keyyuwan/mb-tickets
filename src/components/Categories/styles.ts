@@ -1,7 +1,29 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface CategoryProps {
+  isNotBeingFiltered?: boolean;
+}
 
 export const CategoriesContainer = styled.div`
   margin-top: 2rem;
+`;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    color: ${({ theme }) => theme.colors.pink};
+  }
+
+  @media (min-width: 1024px) {
+    transition: 0.2s;
+
+    button:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const CategoriesList = styled.div`
@@ -18,7 +40,7 @@ export const CategoriesList = styled.div`
   }
 `;
 
-export const Category = styled.div`
+export const Category = styled.div<CategoryProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +49,12 @@ export const Category = styled.div`
   cursor: pointer;
 
   transition: filter 0.2s;
+
+  ${({ isNotBeingFiltered }) =>
+    isNotBeingFiltered &&
+    css`
+      filter: brightness(0.5);
+    `}
 
   &:hover {
     filter: brightness(0.8);
