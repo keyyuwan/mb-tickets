@@ -19,6 +19,10 @@ export const HeaderContainer = styled.header`
   }
 `;
 
+export const Logo = styled.h1`
+  color: ${({ theme }) => theme.colors.pink};
+`;
+
 export const ProfileInfo = styled.div`
   display: flex;
   align-items: center;

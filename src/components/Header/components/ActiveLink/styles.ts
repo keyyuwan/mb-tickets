@@ -8,6 +8,11 @@ export const LinkContent = styled.div<LinkContentProps>`
   color: ${({ theme, isActive }) =>
     isActive ? theme.colors.pink : theme.colors.gray[100]};
 
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
   @media (max-width: 1023px) {
     span {
       display: none;
@@ -24,6 +29,11 @@ export const LinkContent = styled.div<LinkContentProps>`
 
     &:hover {
       color: ${({ theme }) => theme.colors.pink};
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
     }
   }
 `;
