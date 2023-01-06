@@ -330,6 +330,14 @@
       "img": "https://github.com/keyyuwan.png",
       "cpf": "094.070.159-63",
       "password": "1234"
+    },
+    {
+      "id": ":r1:",
+      "username": "teste",
+      "name": "Teste",
+      "surname": "Wan",
+      "cpfcnpj": "580.137.213-04",
+      "password": "123"
     }
   ],
   "users_tickets": [
