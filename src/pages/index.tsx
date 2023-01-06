@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 
@@ -17,15 +18,25 @@ interface HomeProps {
 }
 
 export default function Home({ events, organizers }: HomeProps) {
+  const [userCity, setUserCity] = useState("");
+
+  function onSetUserCity(city: string) {
+    setUserCity(city);
+  }
+
+  const filteredEventsByCity = events.filter(
+    (event) => event.city === userCity
+  );
+
   return (
     <>
       <Head>
         <title>MBTickets</title>
       </Head>
       <Container>
-        <Filter />
+        <Filter userCity={userCity} onSetUserCity={onSetUserCity} />
         <Categories />
-        <Events events={events} />
+        <Events events={userCity ? filteredEventsByCity : events} />
         <SellingEntities organizers={organizers} />
       </Container>
     </>
@@ -34,7 +45,7 @@ export default function Home({ events, organizers }: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const [eventsData, organizersData] = await Promise.all([
-    api.get<IEvent[]>("events?isActive=true", {
+    api.get<IEvent[]>(`events?isActive=true`, {
       params: {
         _sort: "date",
       },

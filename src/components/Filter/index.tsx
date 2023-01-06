@@ -6,15 +6,24 @@ import { Title } from "../Title";
 
 const IPINFOTOKEN = "fab6b2e015faec";
 
-export function Filter() {
-  const [userCity, setUserCity] = useState("");
+interface FilterProps {
+  userCity: string;
+  onSetUserCity: (city: string) => void;
+}
+
+export function Filter({ userCity, onSetUserCity }: FilterProps) {
+  const [userState, setUserState] = useState("");
 
   async function handleLocateUser() {
     if (userCity !== "") return;
 
     fetch(`https://ipinfo.io/json?token=${IPINFOTOKEN}`)
       .then((res) => res.json())
-      .then((jsonres) => setUserCity(`${jsonres.city}, ${jsonres.region}`));
+      .then((jsonres) => {
+        onSetUserCity(jsonres.city);
+        setUserState(jsonres.region);
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -22,7 +31,9 @@ export function Filter() {
       <Title title="Cidade:" />
       <LocationButton onClick={handleLocateUser} isCityEmpty={userCity === ""}>
         <MapPin size={24} />
-        {userCity !== "" ? userCity : "Usar minha Localização"}
+        {userCity !== ""
+          ? `${userCity}, ${userState}`
+          : "Usar minha Localização"}
       </LocationButton>
     </FilterContainer>
   );
