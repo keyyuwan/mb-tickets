@@ -78,3 +78,7 @@ export const Category = styled.div<CategoryProps>`
     }
   }
 `;
+
+export const LoadingContainer = styled.div`
+  margin-top: 1rem;
+`;

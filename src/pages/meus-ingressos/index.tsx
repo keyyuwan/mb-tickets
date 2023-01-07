@@ -8,6 +8,7 @@ import { formatDate } from "../../utils/formatDate";
 import { HorizontalScroll } from "../../components/HorizontalScroll";
 import { Title } from "../../components/Title";
 import { Ticket } from "./components/Ticket";
+import { Loading } from "../../components/Loading";
 import { MyTicketsContainer, TicketsListContainer } from "./styles";
 
 export default function MyTickets() {
@@ -54,7 +55,7 @@ export default function MyTickets() {
   if (isLoading) {
     return (
       <MyTicketsContainer>
-        <p>Carregando...</p>
+        <Loading height="64" width="64" />
       </MyTicketsContainer>
     );
   }
