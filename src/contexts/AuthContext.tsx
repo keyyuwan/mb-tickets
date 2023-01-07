@@ -68,6 +68,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   function signOut() {
     destroyCookie(undefined, "@mbtickets:token");
     destroyCookie(undefined, "@mbtickets:user");
+    setUser(null);
 
     Router.push("/login");
   }
