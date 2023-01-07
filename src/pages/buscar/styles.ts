@@ -53,3 +53,10 @@ export const SearchContent = styled.div``;
 export const SearchResultsContainer = styled.div`
   margin-top: 2rem;
 `;
+
+export const LoadingContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+`;
