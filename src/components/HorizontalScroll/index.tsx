@@ -30,7 +30,7 @@ export function HorizontalScroll({ children }: HorizontalScrollProps) {
       horizontalScrollContainerRef.current!.scrollWidth;
 
     setHasOverflowingChildren(listHasOverflowingChildren);
-  }, []);
+  }, [children]);
 
   return (
     <HorizontalScrollContainer hasOverflowingChildren={hasOverflowingChildren}>

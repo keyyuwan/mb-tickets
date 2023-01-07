@@ -5,6 +5,7 @@ import { api } from "../../services/api";
 import { IEvent } from "../../dtos/EventDTO";
 import { IOrganizer } from "../../dtos/OrganizerDTO";
 import { useDebounce } from "../../hooks/useDebounce";
+import { formatDate } from "../../utils/formatDate";
 import { Events } from "../../components/Events";
 import { SellingEntities } from "../../components/SellingEntities";
 import { Loading } from "../../components/Loading";
@@ -39,7 +40,12 @@ export default function Search() {
           api.get(`organizers?_embed=events&name_like=${search}`),
         ]);
 
-        setEvents(eventsData.data);
+        const formattedEvents = eventsData.data.map((event) => ({
+          ...event,
+          date: formatDate(event.date, "dd 'de' MMMM"),
+        }));
+
+        setEvents(formattedEvents);
         setEntities(organizersData.data);
       } catch (err) {
         console.log(err);
