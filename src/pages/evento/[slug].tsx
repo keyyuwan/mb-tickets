@@ -27,6 +27,8 @@ import {
   BuyTicketButton,
 } from "./styles";
 
+export const TICKET_COUNT_LIMIT = 3;
+
 interface IParams extends ParsedUrlQuery {
   slug: string;
 }
@@ -55,8 +57,14 @@ export default function Event({ event }: EventProps) {
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
   const [ticketToBuy, setTicketToBuy] = useState<TicketToBuy | null>(null);
 
-  function handleAddTicket(ticket: Ticket) {
-    setTicketCount((prevState) => prevState + 1);
+  function addTicket(ticket: Ticket) {
+    setTicketCount((prevState) => {
+      if (prevState + 1 > TICKET_COUNT_LIMIT) {
+        return prevState;
+      } else {
+        return prevState + 1;
+      }
+    });
 
     setTicketToBuy({
       ticketId: ticket.id,
@@ -137,7 +145,7 @@ export default function Event({ event }: EventProps) {
                 key={ticket.id}
                 ticket={ticket}
                 ticketCount={ticketCount}
-                handleAddTicket={handleAddTicket}
+                addTicket={addTicket}
                 handleRemoveTicket={handleRemoveTicket}
               />
             ))}

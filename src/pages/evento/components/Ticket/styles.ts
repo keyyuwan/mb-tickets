@@ -23,20 +23,34 @@ export const TicketContainer = styled.div`
     gap: 0.25rem;
   }
 
-  .ticket-count {
+  .ticket-count-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+
+    span.max {
+      font-size: 0.675rem;
+      color: ${({ theme }) => theme.colors.gray[200]};
+    }
+
+    .ticket-count {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
 
   @media (min-width: 1024px) {
     padding: 1rem 2rem;
 
-    .ticket-count {
-      gap: 1rem;
+    .ticket-count-container {
+      .ticket-count {
+        gap: 1rem;
 
-      span {
-        font-size: 1.125rem;
+        span {
+          font-size: 1.125rem;
+        }
       }
     }
   }
