@@ -33,7 +33,16 @@ export default function MyTickets() {
           `users_tickets?userId=${user?.id}&_expand=user&_expand=ticket&_expand=event&_expand=organizer`
         );
 
-        const formattedTickets = data.map((ticket) => ({
+        const ticketsOrderedDescByDate = data.sort(
+          (a: IUserTickets, b: IUserTickets) => {
+            return (
+              new Date(a.event.date).setHours(0, 0, 0, 0) -
+              new Date(b.event.date).setHours(0, 0, 0, 0)
+            );
+          }
+        );
+
+        const formattedTickets = ticketsOrderedDescByDate.map((ticket) => ({
           ...ticket,
           event: {
             ...ticket.event,

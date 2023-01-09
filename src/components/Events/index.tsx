@@ -27,7 +27,7 @@ export function Events({ events }: EventsProps) {
         </HorizontalScroll>
       ) : (
         <NoEventsText>
-          Nenhuma evento encontrado para esse filtro ou busca
+          Nenhum evento encontrado para esse filtro ou busca
         </NoEventsText>
       )}
     </EventsContainer>

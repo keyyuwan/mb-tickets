@@ -378,6 +378,14 @@
       "eventId": "baile-do-papa-pucpr",
       "organizerId": "puc-pr",
       "userId": "1"
+    },
+    {
+      "id": "a6ecbe3d-846e-4472-826a-77b1268d9976",
+      "number": "02d4877e-f96b-4334-b4a2-ddf11519aea3",
+      "ticketId": "4",
+      "eventId": "catolitros-engenharia-pucpr",
+      "organizerId": "puc-pr",
+      "userId": "1"
     }
   ]
 }
