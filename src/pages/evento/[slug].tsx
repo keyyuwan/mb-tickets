@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
-import { CalendarBlank, MapPin } from "phosphor-react";
+import {
+  CalendarBlank,
+  MapPin,
+  ShareNetwork,
+  WhatsappLogo,
+} from "phosphor-react";
+import { WhatsappShareButton } from "react-share";
 
 import { api } from "../../services/api";
 import { IEvent } from "../../dtos/EventDTO";
@@ -25,6 +32,7 @@ import {
   EventOrganizerContainer,
   EventImageContainer,
   BuyTicketButton,
+  ShareContainer,
 } from "./styles";
 
 export const TICKET_COUNT_LIMIT = 3;
@@ -52,6 +60,9 @@ interface EventProps {
 }
 
 export default function Event({ event }: EventProps) {
+  const router = useRouter();
+  const BASE_URL = "http://localhost:3000";
+
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [ticketCount, setTicketCount] = useState(0);
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
@@ -130,6 +141,18 @@ export default function Event({ event }: EventProps) {
             <MapPin />
             <span>{event.address}</span>
           </div>
+          <ShareContainer>
+            <div className="wrapper">
+              <ShareNetwork size={16} />
+              Compartilhar Evento
+            </div>
+            <WhatsappShareButton
+              title={event.title}
+              url={`${BASE_URL}${router.asPath}`}
+            >
+              <WhatsappLogo size={24} />
+            </WhatsappShareButton>
+          </ShareContainer>
         </EventInfo>
 
         <Wrapper>

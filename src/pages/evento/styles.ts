@@ -86,6 +86,38 @@ export const EventInfo = styled.div`
   }
 `;
 
+export const ShareContainer = styled.div`
+  width: fit-content;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  color: ${({ theme }) => theme.colors.gray[100]};
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  svg {
+    color: ${({ theme }) => theme.colors.gray[100]};
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      color: #25d366;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+  }
+`;
+
 export const EventContent = styled.div`
   @media (max-width: 767px) {
     padding: 0 2rem 2rem;
