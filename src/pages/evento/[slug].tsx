@@ -3,14 +3,17 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
-import { CalendarBlank, MapPin, Minus, Plus } from "phosphor-react";
+import { CalendarBlank, MapPin } from "phosphor-react";
 
 import { api } from "../../services/api";
 import { IEvent } from "../../dtos/EventDTO";
+import { ITicket } from "../../dtos/TicketDTO";
 import { formatDate } from "../../utils/formatDate";
 import { maskToBRL } from "../../utils/masks";
 import { Title } from "../../components/Title";
+import { Ticket } from "./components/Ticket";
 import { SellingEntity } from "../../components/SellingEntity";
+import { BuyTicketModal } from "./components/BuyTicketModal";
 import {
   EventContainer,
   EventContent,
@@ -19,28 +22,26 @@ import {
   TicketsContainer,
   Wrapper,
   EventDescriptionContainer,
-  Ticket,
-  TicketCountButton,
   EventOrganizerContainer,
   EventImageContainer,
-  TicketDisponibility,
+  BuyTicketButton,
 } from "./styles";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
 }
 
-interface GetEventTicketsResponse {
+export interface Ticket {
   id: string;
   isActive: boolean;
   price: number;
+  priceFormatted: string;
   lot: number;
 }
 
-interface Ticket {
-  id: string;
-  isActive: boolean;
-  price: string;
+export interface TicketToBuy {
+  ticketId: string;
+  price: number;
   lot: number;
 }
 
@@ -50,17 +51,45 @@ interface EventProps {
 
 export default function Event({ event }: EventProps) {
   const [tickets, setTickets] = useState<Ticket[]>([]);
+  const [ticketCount, setTicketCount] = useState(0);
+  const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
+  const [ticketToBuy, setTicketToBuy] = useState<TicketToBuy | null>(null);
+
+  function handleAddTicket(ticket: Ticket) {
+    setTicketCount((prevState) => prevState + 1);
+
+    setTicketToBuy({
+      ticketId: ticket.id,
+      price: ticket.price,
+      lot: ticket.lot,
+    });
+  }
+
+  function handleRemoveTicket() {
+    if (ticketCount === 0) return;
+
+    setTicketCount((prevState) => prevState - 1);
+  }
+
+  function handleOpenCheckoutModal() {
+    setIsCheckoutModalOpen(true);
+  }
+
+  function handleCloseCheckoutModal() {
+    setIsCheckoutModalOpen(false);
+  }
 
   useEffect(() => {
     async function getEventTickets() {
       try {
-        const { data } = await api.get<GetEventTicketsResponse[]>(
+        const { data } = await api.get<ITicket[]>(
           `tickets?eventId=${event.id}`
         );
 
         const formattedTickets = data.map((ticket) => ({
           ...ticket,
-          price: maskToBRL(ticket.price),
+          priceFormatted: maskToBRL(ticket.price),
+          price: ticket.price,
         }));
 
         setTickets(formattedTickets);
@@ -104,29 +133,32 @@ export default function Event({ event }: EventProps) {
           <TicketsContainer>
             <Title title="Ingressos" />
             {tickets.map((ticket) => (
-              <Ticket key={ticket.id}>
-                <div className="ticket-info">
-                  <strong>Lote {ticket.lot}</strong>
-                  <span>{ticket.price}</span>
-                  <TicketDisponibility isAvailable={ticket.isActive}>
-                    {ticket.isActive ? "Disponível" : "Esgotado"}
-                  </TicketDisponibility>
-                </div>
-
-                {ticket.isActive && (
-                  <div className="ticket-count">
-                    <TicketCountButton action="remove">
-                      <Minus size={16} />
-                    </TicketCountButton>
-                    <span>0</span>
-                    <TicketCountButton action="add">
-                      <Plus size={16} />
-                    </TicketCountButton>
-                  </div>
-                )}
-              </Ticket>
+              <Ticket
+                key={ticket.id}
+                ticket={ticket}
+                ticketCount={ticketCount}
+                handleAddTicket={handleAddTicket}
+                handleRemoveTicket={handleRemoveTicket}
+              />
             ))}
+            {ticketCount > 0 && (
+              <BuyTicketButton onClick={handleOpenCheckoutModal}>
+                Comprar
+              </BuyTicketButton>
+            )}
           </TicketsContainer>
+
+          <BuyTicketModal
+            isOpen={isCheckoutModalOpen}
+            onToggle={handleCloseCheckoutModal}
+            ticketToBuy={ticketToBuy!}
+            event={{
+              id: event.id,
+              title: event.title,
+              organizerId: event.organizer.id,
+            }}
+            ticketCount={ticketCount}
+          />
         </Wrapper>
 
         <EventOrganizerContainer>

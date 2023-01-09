@@ -127,6 +127,7 @@ export default function Register() {
             />
             <Input
               required
+              type="number"
               label="CPF ou CNPJ"
               name="cpfcnpj"
               value={registerData.cpfcnpj}

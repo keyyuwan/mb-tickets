@@ -4,14 +4,6 @@ interface EventImageContainerProps {
   img: string;
 }
 
-interface TicketCountButtonProps {
-  action: "add" | "remove";
-}
-
-interface TicketDisponibilityProps {
-  isAvailable: boolean;
-}
-
 export const EventContainer = styled.div`
   @media (min-width: 768px) {
     padding: 0 2rem 2rem;
@@ -114,75 +106,32 @@ export const Wrapper = styled.div`
 `;
 
 export const TicketsContainer = styled.div`
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 `;
 
-export const Ticket = styled.div`
-  max-width: 800px;
-  background-color: ${({ theme }) => theme.colors.gray[700]};
-  border-radius: 16px;
-  padding: 1rem;
+export const BuyTicketButton = styled.button`
+  background-color: ${({ theme }) => theme.colors.green};
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.fonts.heading};
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .ticket-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .ticket-count {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 1rem 2rem;
-
-    .ticket-count {
-      gap: 1rem;
-
-      span {
-        font-size: 1.125rem;
-      }
-    }
-  }
-`;
-
-export const TicketCountButton = styled.button<TicketCountButtonProps>`
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-
+  align-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  ${({ action }) =>
-    action === "add"
-      ? css`
-          background-color: ${({ theme }) => theme.colors.white};
-
-          svg {
-            color: ${({ theme }) => theme.colors.gray[800]};
-          }
-        `
-      : css`
-          background-color: ${({ theme }) => theme.colors.gray[800]};
-
-          svg {
-            color: ${({ theme }) => theme.colors.white};
-          }
-        `}
+  height: 40px;
+  padding: 1rem;
+  border-radius: 8px;
 
   @media (min-width: 1024px) {
-    width: 32px;
-    height: 32px;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `;
 
@@ -202,9 +151,4 @@ export const EventOrganizerContainer = styled.div`
   gap: 1rem;
 
   width: fit-content;
-`;
-
-export const TicketDisponibility = styled.span<TicketDisponibilityProps>`
-  color: ${({ theme, isAvailable }) =>
-    isAvailable ? theme.colors.green : theme.colors.red};
 `;

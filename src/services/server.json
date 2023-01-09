@@ -342,28 +342,42 @@
   ],
   "users_tickets": [
     {
-      "id": "1",
-      "number": 136162,
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
       "ticketId": "1",
       "userId": "1",
       "eventId": "choppada-calouros-med-pucpr",
       "organizerId": "puc-pr"
     },
     {
-      "id": "1",
-      "number": 2837181,
+      "id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
       "ticketId": "1",
       "userId": "1",
       "eventId": "choppada-direito-pucpr",
       "organizerId": "puc-pr"
     },
     {
-      "id": "1",
-      "number": 136341,
-      "ticketId": "1",
-      "userId": "2",
-      "eventId": "choppada-calouros-med-pucpr",
-      "organizerId": "puc-pr"
+      "id": "8b0a907d-36da-476f-899d-5034c98ee236",
+      "number": "a440da8c-fe39-4896-9b6c-9e228c49053a",
+      "ticketId": "3",
+      "eventId": "show-matue",
+      "organizerId": "torres-eventos",
+      "userId": "1"
+    },
+    {
+      "id": "02260f62-2f27-455c-8b11-c799638da117",
+      "number": "97fc2604-8feb-46b9-bdb4-d3deca8cee89",
+      "ticketId": "5",
+      "eventId": "baile-do-papa-pucpr",
+      "organizerId": "puc-pr",
+      "userId": "1"
+    },
+    {
+      "id": "eb64a2c7-ca7b-4cc5-aed4-b17c01fdc564",
+      "number": "db63c4fc-e88a-4167-8bd2-5408a31ae6bb",
+      "ticketId": "5",
+      "eventId": "baile-do-papa-pucpr",
+      "organizerId": "puc-pr",
+      "userId": "1"
     }
   ]
 }

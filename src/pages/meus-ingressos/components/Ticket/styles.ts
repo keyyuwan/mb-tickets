@@ -60,6 +60,9 @@ export const TicketInfo = styled.div`
   p {
     font-weight: bold;
     font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `;
 

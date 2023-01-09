@@ -1,6 +1,5 @@
 export interface IUserTickets {
   id: string;
-  number: number;
   event: {
     title: string;
     img: string;

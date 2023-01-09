@@ -46,8 +46,8 @@ export function TicketDetailsModal({
           <Title title="Detalhes do Ingresso" />
 
           <TicketInfo>
-            <span>Número do ingresso</span>
-            <p>{ticket.number}</p>
+            <span>ID do ingresso</span>
+            <p>{ticket.id}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Nome</span>
@@ -70,11 +70,8 @@ export function TicketDetailsModal({
             <p>{ticket.ticket.lot}</p>
           </TicketInfo>
           <TicketInfo>
-            <span>Data</span>
-            <p>
-              {/* 12/08/2023 ás 13:00 */}
-              {ticket.event.date}
-            </p>
+            <span>Data do evento</span>
+            <p>{ticket.event.date}</p>
           </TicketInfo>
           <TicketInfo>
             <span>Endereço</span>

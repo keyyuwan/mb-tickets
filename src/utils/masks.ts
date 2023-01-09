@@ -71,3 +71,39 @@ export function maskCPFCNPJ(cpfcnpj: string) {
   if (cpfcnpj.length <= 11) return maskCPF(cpfcnpj);
   return maskCNPJ(cpfcnpj);
 }
+
+export function maskCardExpireDate(value: string) {
+  if (!value) return "";
+  value = value.toString().replace(/\D/g, "");
+
+  if (value.length === 0) return "";
+  else if (value.length < 2) return value;
+  else return value.substr(0, 5).replace(/(\d{2})(\d{2})/, "$1/$2");
+}
+
+export function maskCard(number: string) {
+  if (!number) return "";
+  number = number.toString().replace(/\D/g, "");
+
+  if (number.length === 0) return "";
+
+  return number
+    .substr(0, 16)
+    .match(/\d{1,4}/g)!
+    .join(" ");
+}
+
+export function maskPhone(tel: string) {
+  if (!tel) return "";
+  tel = tel.toString().replace(/\D/g, "");
+
+  if (tel.length < 1) return "";
+  else if (tel.length < 3) return tel.replace(/(\d{1})/, "($1");
+  else if (tel.length < 8) return tel.replace(/(\d{2})(\d{0,5})/, "($1) $2");
+  else if (tel.length < 10)
+    return tel.replace(/(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3");
+  else if (tel.length === 10)
+    return tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+  else
+    return tel.substr(0, 11).replace(/(\d{2})(\d{4,5})(\d{4})/, "($1) $2-$3");
+}

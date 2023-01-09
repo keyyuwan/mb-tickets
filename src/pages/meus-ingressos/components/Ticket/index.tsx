@@ -28,16 +28,13 @@ export function Ticket({ ticket }: TicketProps) {
         <span className="event-name">{ticket.event.title}</span>
 
         <TicketInfo>
-          <span>Número do ingresso</span>
-          <p>{ticket.number}</p>
+          <span>ID do ingresso</span>
+          <p>{ticket.id}</p>
         </TicketInfo>
 
         <TicketInfo>
           <span>Data do evento</span>
-          <p>
-            {/* 12/08/2023 ás 13:00 */}
-            {ticket.event.date}
-          </p>
+          <p>{ticket.event.date}</p>
         </TicketInfo>
 
         <DetailsButton onClick={handleToggleDetailsModal}>

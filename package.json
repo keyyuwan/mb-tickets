@@ -25,7 +25,8 @@
     "react-modal": "^3.16.1",
     "react-spring": "^9.6.1",
     "react-toastify": "^9.1.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/json-server": "^0.14.4",
@@ -34,6 +35,7 @@
     "@types/react-dom": "18.0.10",
     "@types/react-modal": "^3.13.1",
     "@types/styled-components": "^5.1.26",
+    "@types/uuid": "^9.0.0",
     "typescript": "4.9.4"
   }
 }
